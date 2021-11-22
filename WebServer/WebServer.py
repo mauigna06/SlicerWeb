@@ -1699,8 +1699,8 @@ class WebServerLogic:
     self.port = SlicerHTTPServer.findFreePort(self.port)
     self.logMessage("Starting server on port %d" % self.port)
     self.logMessage('docroot: %s' % self.docroot)
-    # for testing webxr
-    certfile = '/Users/pieper/slicer/latest/SlicerWeb/localhost.pem'
+    # example: certfile = '/Users/pieper/slicer/latest/SlicerWeb/localhost.pem'
+    certfile = None
     self.server = SlicerHTTPServer(docroot=self.docroot,server_address=("",self.port),logFile=self.logFile,logMessage=self.logMessage, certfile=certfile)
     self.server.start()
 
